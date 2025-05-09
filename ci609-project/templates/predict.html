@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Predict{% endblock %}
+
+{% block content %}
+<div id="predict-layout" class="predict-layout" data-logged-in="{{ (session.get('id') is not none) | tojson }}">
+
+  <!-- prediction form -->
+  <div class="container">
+    <h2>Match Prediction</h2>
+    <form id="predict-form">
+      <!-- league dropdown -->
+      <div class="input-group">
+        <label for="league">League:</label>
+        <select id="league" name="league">
+          <option value="2024_2025" {% if selected_league == '2024_2025' %}selected{% endif %}>Premier League</option>
+          <option value="bundesliga_24_25" {% if selected_league == 'bundesliga_24_25' %}selected{% endif %}>Bundesliga</option>
+          <option value="serie_a_24_25" {% if selected_league == 'serie_a_24_25' %}selected{% endif %}>Serie A</option>
+          <option value="la_liga_24_25" {% if selected_league == 'la_liga_24_25' %}selected{% endif %}>La Liga</option>
+          <option value="ligue_1_24_25" {% if selected_league == 'ligue_1_24_25' %}selected{% endif %}>Ligue 1</option>
+        </select>
+      </div>
+
+      <!-- home team -->
+      <div class="input-group">
+        <label for="home_team">Home Team:</label>
+        <select id="home_team" name="home_team">
+          {% for team in teams %}
+            <option value="{{ team }}">{{ team }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- away team -->
+      <div class="input-group">
+        <label for="away_team">Away Team:</label>
+        <select id="away_team" name="away_team">
+          {% for team in teams %}
+            <option value="{{ team }}">{{ team }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Predict</button>
+    </form>
+  </div>
+
+  <!-- prediction console output -->
+  <div class="console-container">
+    <div class="console">
+      <h3>Console</h3>
+      <pre id="console-output">
+{% for line in history_entries %}
+{{ line }}
+{% endfor %}
+      </pre>
+      {% if not session.get('username') %}
+        <div class="prompt">Please <a href="{{ url_for('login') }}">log in</a> to save or export results.</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- console buttons -->
+  <div class="console-buttons">
+    <button id="save-btn">Save</button>
+    <button id="export-btn">Export</button>
+    <button id="clear-btn">Clear</button>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

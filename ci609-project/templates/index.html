@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<!-- hero section -->
+<div class="section-container container1">
+  <h1>{prediction algorithm}</h1>
+</div>
+
+<!-- intro video & AI summary -->
+<div class="section-container container2 flex-container">
+  <div class="left">
+    <video autoplay muted loop class="bg-video">
+      <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
+    </video>
+  </div>
+  <div class="right">
+    <p>{prediction algorithm} uses artificial intelligence to analyse match statistics and predict the most likely outcomes of football games.</p>
+  </div>
+</div>
+
+<!-- how it works -->
+<div class="section-container container3 flex-container">
+  <div class="left">
+    <h2>How does the {prediction algorithm} work?</h2>
+    <p>
+      We gather historical data on team performance and past results from the top 5 leagues in the world
+      to feed into two machine learning models: neural networks and random forests.
+    </p>
+    <p>
+      The model returns a prediction, a score of confidence and key influencing factors for transparency.
+    </p>
+  </div>
+  <div class="right">
+    <a href="{{ url_for('about') }}" class="btn" id="b1">Learn More</a>
+  </div>
+</div>
+
+<!-- forecast feature highlights -->
+<div class="section-container container4 flex-container">
+  <div class="left">
+    <video autoplay muted loop class="bg-video">
+      <source src="{{ url_for('static', filename='videos/video2.mp4') }}" type="video/mp4">
+    </video>
+  </div>
+  <div class="right">
+    <p><strong>Accurate Forecasts</strong> – real-time predictions based on data from past seasons.</p>
+    <p><strong>Model Transparency</strong> – see which model was used and how confident it is in each prediction.</p>
+    <p><strong>Easy-to-use Interface</strong> – clean and intuitive design for fast and hassle-free access to predictions.</p>
+  </div>
+</div>
+
+<!-- CTA to generate prediction -->
+<div class="section-container container5 flex-container">
+  <div class="left">
+    <h2>Generate a Prediction</h2>
+    <p>Enter two teams and run a match analysis to view predicted outcomes and supported data.</p>
+  </div>
+  <div class="right">
+    <a href="{{ url_for('predict') }}" class="btn">Try It Now</a>
+  </div>
+</div>
+
+<!-- spacer -->
+<div class="section-container container6 flex-container"></div>
+{% endblock %}

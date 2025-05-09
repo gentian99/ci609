@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+
+  <!-- disable caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@500&family=Inconsolata:wght@200;300&family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+</head>
+
+<body class="{% if request.endpoint != 'index' %}has-bottom-border{% endif %}">
+  <div class="page-wrapper">
+    
+    <!-- top nav -->
+    <div class="topnav">
+      <a class="hamburger" onclick="openSideBar()"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <!-- sidebar nav -->
+    <div id="sidebar" class="sidebar">
+      <nav>
+        <a href="javascript:void(0)" class="close" onclick="closeSideBar()">&times;</a>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('predict') }}">Predict</a>
+        <a href="mailto:g.rashica1@uni.brighton.ac.uk">Contact</a>
+        {% if session.get('username') %}
+          <a href="{{ url_for('logout') }}">Sign Out</a>
+        {% else %}
+          <a href="{{ url_for('login') }}">Login</a>
+          <a href="{{ url_for('signup') }}" class="signup-link">Sign Up</a>
+        {% endif %}
+      </nav>
+    </div>
+
+    <!-- main page content -->
+    <main class="main-content">
+      {% block content %}{% endblock %}
+    </main>
+
+    <!-- footer -->
+    <footer>
+      © 2025 {prediction algorithm}
+      | <a href="{{ url_for('about') }}#faq">FAQ</a>
+      | <a href="{{ url_for('about') }}#ai-practices">AI Practices</a>
+      | <a href="{{ url_for('about') }}#privacy">Privacy</a>
+    </footer>
+  </div>
+
+  <!-- scripts -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

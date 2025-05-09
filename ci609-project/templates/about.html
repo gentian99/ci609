@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<main class="about-wrapper">
+
+  <!-- section: prediction algorithm -->
+  <section id="faq" class="about-section">
+    <h2>Prediction Algorithm</h2>
+    <p>
+      The {prediction algorithm} uses artificial intelligence to analyse team statistics and recent performances
+      to estimate the most likely outcome of a football match. It has been trained using real match data
+      from the top five European leagues.
+    </p>
+    <p>
+      By identifying patterns in both long-term performance and short-term trends,
+      the {prediction algorithm} is able to produce more accurate outcomes than simple win-loss comparisons.
+    </p>
+  </section>
+
+  <hr>
+
+  <!-- section: how it's used -->
+  <section id="usage" class="about-section">
+    <h2>How It's Used</h2>
+    <p>
+      To use the {prediction algorithm}, simply choose a home team and an away team.
+      The system will evaluate their recent form and historical results, then provide a predicted match outcome.
+    </p>
+    <p>
+      Logged-in users can save their predictions, export them as a text file, and manage their prediction history.
+      Guests can use the tool freely, but saving and exporting features are only available to registered users.
+    </p>
+  </section>
+
+  <hr>
+
+  <!-- section: AI practices -->
+  <section id="ai-practices" class="about-section">
+    <h2>AI Practices</h2>
+    <p>
+      The {prediction algorithm} was built with responsible AI practices in mind.
+      It only uses real match statistics such as goals, shots, and team performance —
+      no betting data or gambling odds are included.
+    </p>
+    <p>
+      This tool is designed as an educational and analytical system.
+      It is not intended for use in betting or gambling,
+      and care has been taken to ensure predictions are based purely on in-game performance.
+    </p>
+  </section>
+
+  <hr>
+
+  <!-- section: privacy -->
+  <section id="privacy" class="about-section">
+    <h2>Privacy</h2>
+    <p>
+      Only the essential information required to manage accounts and save predictions is collected.
+      Passwords are securely encrypted, and no personal data is ever shared or used outside the application.
+    </p>
+    <p>
+      The {prediction algorithm} does not use user data to improve its model.
+      All data remains private, and users can delete their saved predictions or account information at any time.
+    </p>
+  </section>
+
+</main>
+{% endblock %}

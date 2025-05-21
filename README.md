@@ -68,6 +68,7 @@ Run the model training script. This will:
 - Save the final model and preprocessing objects.
 
 ```bash
+python preprocessing.py
 python train_model.py
 ```
 

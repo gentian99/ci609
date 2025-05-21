@@ -42,12 +42,12 @@ cd ci609/ci609-project
 Create and activate a Python virtual environment:
 
 ```bash
-pyenv install 3.10.13
-pyenv local 3.10.13
-rm -rf .venv
-python3.10 -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
+pyenv install 3.10.13               
+pyenv local 3.10.13                   
+rm -rf .venv                         
+python -m venv .venv                
+source .venv/bin/activate  
+pip install --upgrade pip        
 ```
 
 ### 3. Install Dependencies

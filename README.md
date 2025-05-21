@@ -16,14 +16,19 @@ This is a web-based football match outcome prediction system developed using Pyt
 
 Before setting up the project, ensure you have the following:
 
-- **Python 3.10.x**  
-  TensorFlow and other core dependencies do **not work with Python 3.11, 3.12, or 3.13**.  
-  Download Python 3.10.13 from the official website:
+- **Homebrew** (macOS package manager)  
+  Install from https://brew.sh if you do not already have it.
 
-  https://www.python.org/downloads/release/python-31013/
+- **Python 3.10.x** via Homebrew  
+  TensorFlow and other required libraries do **not work with Python 3.11 or 3.12+**.
 
-- pip (comes with Python 3.10 installer)
-- Internet connection (for downloading packages and datasets)
+- pip (included with the Python 3.10 installation)
+
+- Internet connection (required to download packages and datasets)
+
+```bash
+brew install python@3.10
+```
 
 ## Setup Instructions
 

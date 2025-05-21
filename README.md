@@ -1,30 +1,37 @@
-# ci609
-final year project
+# ci609  
+Final Year Project
+
 # Football Match Outcome Prediction Web Application
 
 This is a web-based football match outcome prediction system developed using Python, Flask, and TensorFlow. The application allows users to select two football teams and receive a predicted outcome based on historical match data and engineered performance metrics. It incorporates a hybrid machine learning model combining tabular features and sequence data.
 
 ## Overview
 
-- Built with Flask for the backend and TensorFlow for model inference.
-- Implements a hybrid neural network architecture trained on Premier League data (2022–2025).
-- Provides user authentication and history-saving functionality.
-- Supports team selection from the Premier League and placeholders for additional leagues.
+- Developed using Flask for the backend and TensorFlow for model inference.
+- Implements a hybrid neural network trained on Premier League data (2022–2025).
+- Includes user authentication and prediction history-saving functionality.
+- Supports team selection from the Premier League, with placeholders for multi-league expansion.
 
 ## Prerequisites
 
-Ensure the following are installed before setting up the application:
+Before setting up the application, ensure the following software is installed:
 
-- Python 3.8 or above
+- **Python 3.10.x**  
+  TensorFlow and several scientific libraries used in this project are **not compatible with Python 3.11, 3.12, or 3.13**.  
+  Using Python 3.13 will result in package installation errors and runtime failures.
+
 - pip (Python package installer)
-- Virtual environment tool (`venv` or `virtualenv`)
-- Internet connection (required for dataset loading)
+- A virtual environment tool such as `venv` or `virtualenv`
+- Internet connection (required to download datasets and dependencies)
+
+You can install Python 3.10 using [pyenv](https://github.com/pyenv/pyenv) or by downloading it directly from the official website:  
+https://www.python.org/downloads/release/python-31013/
 
 ## Installation Instructions
 
 ### 1. Clone the Repository
 
-Navigate to your development directory and clone the project:
+Open a terminal and run the following commands to clone the repository and navigate into the project directory:
 
 ```bash
 git clone https://github.com/gentian99/ci609.git
@@ -36,7 +43,7 @@ cd ci609/ci609-project
 Create and activate a Python virtual environment:
 
 ```bash
-python3 -m venv .venv
+python3.10 -m venv .venv
 source .venv/bin/activate         # On Windows: .venv\Scripts\activate
 ```
 

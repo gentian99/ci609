@@ -27,8 +27,8 @@ Ensure the following are installed before setting up the application:
 Navigate to your development directory and clone the project:
 
 ```bash
-git clone https://github.com/gentian99/ci609/ci609-project.git
-cd ci609
+git clone https://github.com/gentian99/ci609.git
+cd ci609/ci609-project
 ```
 
 ### 2. Set Up a Virtual Environment

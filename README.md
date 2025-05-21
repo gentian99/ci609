@@ -7,25 +7,24 @@ This is a web-based football match outcome prediction system developed using Pyt
 
 ## Overview
 
-- Developed using Flask for the backend and TensorFlow for model inference.
+- Built using Flask for the web backend and TensorFlow for model inference.
 - Implements a hybrid neural network trained on Premier League data (2022–2025).
-- Includes user authentication and prediction history-saving functionality.
-- Supports team selection from the Premier League, with placeholders for multi-league expansion.
+- Provides user authentication and result history functionality.
+- Supports Premier League team selection with placeholder support for additional leagues.
 
 ## Prerequisites
 
-Before setting up the application, ensure the following software is installed:
+Before setting up the project, ensure the following are available:
 
-- **Python 3.10.x**  
-  TensorFlow and several scientific libraries used in this project are **not compatible with Python 3.11, 3.12, or 3.13**.  
-  Using Python 3.13 will result in package installation errors and runtime failures.
-
+- [pyenv](https://github.com/pyenv/pyenv) – for managing Python versions
+- Python 3.10.13 (installed via `pyenv`)
 - pip (Python package installer)
-- A virtual environment tool such as `venv` or `virtualenv`
-- Internet connection (required to download datasets and dependencies)
+- Internet connection for downloading dependencies and datasets
 
-You can install Python 3.10 using [pyenv](https://github.com/pyenv/pyenv) or by downloading it directly from the official website:  
-https://www.python.org/downloads/release/python-31013/
+**Important:**  
+TensorFlow and several other scientific libraries do **not currently support Python 3.11, 3.12, or 3.13**.  
+Using Python 3.13 will result in install errors such as:
+
 
 ## Installation Instructions
 
@@ -43,8 +42,12 @@ cd ci609/ci609-project
 Create and activate a Python virtual environment:
 
 ```bash
+pyenv install 3.10.13
+pyenv local 3.10.13
+rm -rf .venv
 python3.10 -m venv .venv
-source .venv/bin/activate         # On Windows: .venv\Scripts\activate
+source .venv/bin/activate
+pip install --upgrade pip
 ```
 
 ### 3. Install Dependencies

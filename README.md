@@ -27,7 +27,7 @@ Ensure the following are installed before setting up the application:
 Navigate to your development directory and clone the project:
 
 ```bash
-git clone git clone https://github.com/gentian99/ci609.git
+git clone https://github.com/gentian99/ci609.git
 cd ci609
 ```
 
